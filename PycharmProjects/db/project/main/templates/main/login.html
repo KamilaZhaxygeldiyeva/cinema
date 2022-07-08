@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div style="align-items: center; width: 30%; margin:100px 0px 190px 500px; font-size:18px;" class="alert alert-primary">
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-info" style="font-size: 18px; align-items:center; margin-left:40%">login</button>
+</form>
+
+</div>
+{% endblock %}

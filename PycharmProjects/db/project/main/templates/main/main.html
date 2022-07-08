@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Main page{% endblock %}
+
+{% block content %}
+{% load static %}
+  <div class="feature">
+
+    <div class="container">
+      <div class="wrapper">
+
+         <img src="static/main/img/iStock-915697084.jpg" style="width: 1200px;">
+         <img src="static/main/img/n.jpg" style="width: 1200px">
+
+         <img src="static/main/img/fazer.jpg" style="width: 1200px">
+          <img src="static/main/img/ds.jpg" style="width: 1500px">
+      </div>
+    </div>
+    <!--<div style="margin-left: 200px">
+        <a href="" style="font-size: 30px">Сегодня в кино</a> <span style="font-size: 30px">|</span>
+        <a href="{% url 'main' %}" style="font-size: 30px">Скоро на экранах</a>
+    </div> -->
+    <div>
+    <div style="margin-left: 200px">
+        <!--<a href="" style="font-size: 30px">Сегодня в кино</a> <span style="font-size: 30px">|</span> -->
+        <a href="{% url 'main' %}" style="font-size: 35px">Сегодня в кино</a>
+    </div>
+        <div class="card" style="display: flex; flex-wrap: wrap;
+        height: 1200px; width: 900px;
+ align-content: space-between; ">
+    {% for el in mov %}
+
+             <div class="cards" style="margin:5px"><a href="{% url 'movie' el.id %}" class="pic" alt="{{ el.name }}"><img alt="{{ el.name }}" src="static/main/img/{{ el.capture }}" style="width: 200px; padding: 5px"></a>
+
+             </div>
+
+      {% endfor %}
+        </div>
+</div>
+  </div>
+{% endblock %}

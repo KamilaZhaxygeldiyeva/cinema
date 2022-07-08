@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Authorize{% endblock %}
+
+{% block content %}
+<div style="align-items: center;margin:80px 0px 100px 500px; font-size:18px; width:30%" class="alert alert-primary">
+    <form method="post">
+    {% csrf_token %}
+
+     {% for i in form %}
+        <p>
+
+            <label class="form-label" for="{{ i.id_for_label }}">{{ i.label }}: </label> {{ i }}
+
+        </p>
+        <div class="form-error">{{ i.errors }}</div>
+        {% endfor %}
+    <button type="submit" class="btn btn-info" style="font-size: 18px; align-items:center; margin-left:40%">Register</button>
+    </form>
+</div>
+
+{% endblock %}

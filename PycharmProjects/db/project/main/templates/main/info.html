@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Movie{% endblock %}
+
+{% block content %}
+<div style="height: 400px; float: left">
+<div style=" display:inline; float:left;"><img src="/static/main/img/{{ movies.image }}" class="inf" style=" width: 250px; display: inline-block"></div>
+
+<div class="text" style="height: 350px;">
+<div style="font-size: 32px; font-weight: ; ">{{ movies.name }}</div>
+    <hr style="width: 850px">
+<div style="color:green; font-size: 25px; margin-bottom: 30px">{{ movies.genre }}</div>
+<div style="">
+    <div >Продолжительность: {{ movies.during_time }}</div>
+<div>Год: {{ movies.year }}</div>
+
+<div style="padding-bottom: -30px">Рейтинг: {{ movies.rating }}</div></div>
+
+</div>
+</div>
+<p style=" font-size: 18px; margin: 25px 120px 25px 120px;padding-top: 10px ">{{ movies.description }}</p
+
+{% endblock %}
